@@ -1,60 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutForm"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="#F8F9FA">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#7B2FBE"
+        android:elevation="4dp"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnVoltar"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="0dp"
+            app:icon="@android:drawable/ic_menu_revert"
+            app:iconTint="#FFFFFF"
+            app:iconSize="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Nova Nota"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnVoltar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
-        android:id="@+id/etTitulo"
-        android:layout_width="match_parent"
+        android:id="@+id/edtTitulo"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Título do dia..."
-        android:textSize="22sp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:hint="Título"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:importantForAutofill="no"
-        android:inputType="textCapSentences"
-        android:minHeight="48dp" />
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <ScrollView
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/edtDescricao"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:fillViewport="true">
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:gravity="top"
+        android:hint="Comece a digitar..."
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/edtTitulo"
+        app:layout_constraintBottom_toTopOf="@id/cardPreview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <EditText
-            android:id="@+id/etConteudo"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardPreview"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#E2E8F0"
+        app:layout_constraintBottom_toTopOf="@id/btnCamera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imgPreview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Como foi o seu dia? Escreva aqui ou use o microfone..."
-            android:gravity="top"
-            android:importantForAutofill="no"
-            android:inputType="textMultiLine|textCapSentences"
-            android:background="@android:color/transparent"
-            android:textSize="16sp" />
-    </ScrollView>
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCamera"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        android:padding="12dp"
+        android:text="Tirar Foto"
+        android:textColor="#4A5568"
+        app:icon="@android:drawable/ic_menu_camera"
+        app:iconTint="#4A5568"
+        app:backgroundTint="#EDF2F7"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@id/btnAudio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/btnMicrofone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="🎙️ Ditar por Voz"
-            android:textSize="16sp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAudio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:text="Gravar Áudio"
+        android:textColor="#4A5568"
+        app:icon="@android:drawable/ic_btn_speak_now"
+        app:iconTint="#4A5568"
+        app:backgroundTint="#EDF2F7"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@id/btnSalvar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/btnSalvar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Salvar Entrada no Diário"
-            android:textSize="16sp" />
-    </LinearLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSalvar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:text="Salvar Nota"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#7B2FBE"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

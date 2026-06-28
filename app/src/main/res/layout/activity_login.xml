@@ -9,94 +9,63 @@
     android:padding="32dp"
     android:background="#7B2FBE">
 
-    <!-- Logo -->
-    <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_launcher_foreground"
-        android:contentDescription="Logo"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Título -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="diariooooooo"
+        android:text="SafeMemo"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
         android:layout_marginBottom="48dp" />
 
-    <!-- Campo E-mail -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="E-mail"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxStrokeColor="#FFFFFF"
-        app:hintTextColor="#FFFFFF"
-        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundMode="outline"
         android:layout_marginBottom="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:imeOptions="actionNext"
-            android:textColor="#1A1C1E"
-            android:textColorHint="#888888" />
+            android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Campo Senha -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Senha"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxStrokeColor="#FFFFFF"
-        app:hintTextColor="#FFFFFF"
-        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundMode="outline"
         app:passwordToggleEnabled="true"
-        app:passwordToggleTint="#7B2FBE"
         android:layout_marginBottom="32dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtSenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:imeOptions="actionDone"
-            android:textColor="#1A1C1E"
-            android:textColorHint="#888888" />
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Botão Entrar -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:text="ENTRAR"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:textColor="#7B2FBE"
-        app:backgroundTint="#FFFFFF"
         app:cornerRadius="28dp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        app:backgroundTint="#FFFFFF"
+        android:textColor="#7B2FBE"/>
 
-    <!-- Botão Criar Conta -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCriarConta"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:text="CRIAR CONTA"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        app:backgroundTint="@android:color/transparent"
         app:cornerRadius="28dp"
+        app:strokeWidth="2dp"
         app:strokeColor="#FFFFFF"
-        app:strokeWidth="1.5dp" />
+        android:textColor="#FFFFFF"
+        app:backgroundTint="@android:color/transparent"/>
 
 </LinearLayout>

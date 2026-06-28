@@ -17,7 +17,6 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Auto-login
         if (userAuth.isUserLoggedIn()) {
             startActivity(Intent(this, MainActivity::class.java))
             finish()

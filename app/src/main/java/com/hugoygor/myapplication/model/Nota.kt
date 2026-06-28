@@ -1,11 +1,9 @@
 package com.hugoygor.myapplication.model
 
-import java.util.Date
-
 data class Nota(
-    val id: String = "",
     val titulo: String = "",
-    val conteudo: String = "",
-    val dataCriacao: Date = Date(),
-    val urlFoto: String? = null
+    val descricao: String = "",
+    val imageUrl: String = "",
+    val audioBase64: String = "",
+    val data: Long = 0
 )
