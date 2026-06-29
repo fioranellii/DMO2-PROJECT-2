@@ -58,7 +58,6 @@ class FormNotaActivity : AppCompatActivity(), SensorEventListener {
         accelerationLast = SensorManager.GRAVITY_EARTH
         shake = 0.00f
 
-        // NOVO: Faz o botão de voltar fechar a tela atual e retornar para a anterior
         binding.btnVoltar.setOnClickListener {
             finish()
         }
