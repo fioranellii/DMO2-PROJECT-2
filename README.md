@@ -11,23 +11,7 @@ Professor: Henrique Galati
 
 </div>
 
----
 
-## 🎬 Demo
-
-
-
-
-
-https://github.com/user-attachments/assets/0e297f8a-2c41-4c35-a214-7a8e22db192b
-
-
-
-
-
-
-
----
 
 ## 👥 Integrantes
 
@@ -75,6 +59,24 @@ O diferencial está no uso dos **sensores nativos do dispositivo**, que tornam a
 | Áudio | `MediaRecorder` · `MediaPlayer` |
 | Sensores | `SensorManager` — `TYPE_ACCELEROMETER` · `TYPE_LIGHT` |
 | UI | ViewBinding · RecyclerView · Material Design |
+
+---
+
+---
+
+## 🎬 Video Demonstrativo
+
+
+
+
+
+https://github.com/user-attachments/assets/0e297f8a-2c41-4c35-a214-7a8e22db192b
+
+
+
+
+
+
 
 ---
 
